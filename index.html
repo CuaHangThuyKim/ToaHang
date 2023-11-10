@@ -77,9 +77,9 @@
         }
         #div2{
             position: relative;
-            left: 25%;
+            left: 30%;
             width: fit-content;
-            margin-left: 30px;
+            margin-left: 200px;
             margin-bottom: 20px;
             
         }
@@ -121,55 +121,178 @@
             opacity: 0.5;
            
         }
+        #startRecord,#startRecord1,#startRecord2,#startRecord3,#startRecord4,#startRecord5,#startRecord6{
+            background-color: rgb(189, 203, 214);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #stopRecord,#stopRecord1,#stopRecord2,#stopRecord3,#stopRecord4,#stopRecord6,#stopRecord5{
+            background-color: rgb(189, 203, 214);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #startRecord:hover{
+            opacity: 0.6;
+        }
+        #startRecord:active{
+            background-color: red;
+        }
+        #stopRecord:hover{
+            opacity: 0.6;
+        }
+        #stopRecord:active{
+            background-color: green;
+        }
+        
+        #startRecord1:hover{
+            opacity: 0.6;
+        }
+        #startRecord1:active{
+            background-color: red;
+        }
+        #stopRecord1:hover{
+            opacity: 0.6;
+        }
+        #stopRecord1:active{
+            background-color: green;
+        }
+        
+        #startRecord2:hover{
+            opacity: 0.6;
+        }
+        #startRecord2:active{
+            background-color: red;
+        }
+        #stopRecord2:hover{
+            opacity: 0.6;
+        }
+        #stopRecord2:active{
+            background-color: green;
+        }
+
+        #startRecord3:hover{
+            opacity: 0.6;
+        }
+        #startRecord3:active{
+            background-color: red;
+        }
+        #stopRecord3:hover{
+            opacity: 0.6;
+        }
+        #stopRecord3:active{
+            background-color: green;
+        }
+
+        #startRecord4:hover{
+            opacity: 0.6;
+        }
+        #startRecord4:active{
+            background-color: red;
+        }
+        #stopRecord4:hover{
+            opacity: 0.6;
+        }
+        #stopRecord4:active{
+            background-color: green;
+        }
+
+        #startRecord5:hover{
+            opacity: 0.6;
+        }
+        #startRecord5:active{
+            background-color: red;
+        }
+        #stopRecord5:hover{
+            opacity: 0.6;
+        }
+        #stopRecord5:active{
+            background-color: green;
+        }
+
+        #startRecord6:hover{
+            opacity: 0.6;
+        }
+        #startRecord6:active{
+            background-color: red;
+        }
+        #stopRecord6:hover{
+            opacity: 0.6;
+        }
+        #stopRecord6:active{
+            background-color: green;
+        }
+
+        #startRecord7:hover{
+            opacity: 0.6;
+        }
+        #startRecord7:active{
+            background-color: red;
+        }
+        #stopRecord7:hover{
+            opacity: 0.6;
+        }
+        #stopRecord7:active{
+            background-color: green;
+        }
     </style>
     <title>LÀM TOA HÀNG</title>
 </head>
 <body>
     <div id="header">
-        <h2 style="margin-right: 5% ;color: aliceblue;"><a href="https://cuahangthuykim.github.io/TrangChu/">TRANG CHỦ</a></h2>
-        <h2 ><a href="https://cuahangthuykim.github.io/HoaDonKhachHang/">TÍNH HOÁ ĐƠN KHÁCH</a></h2>
-        <h2  style="margin-left:5%"  ><a href="https://cuahangthuykim.github.io/ToaHang/">LÀM TOA HÀNG</a></h2>
+        <h2 style="margin-right: 5% ;color: aliceblue;"><a href="URL-cua-lien-ket"><i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i> TRANG CHỦ</a></h2>
+        <h2 ><a href="URL-cua-lien-ket"><i class="fa-solid fa-receipt fa-xl" style="color: #ffffff;"></i> NHẬP HOÁ ĐƠN </a></h2>
+        <h2  style="margin-left:5%"  ><a href="URL-cua-lien-ket"><i class="fa-solid fa-layer-group fa-xl" style="color: #fafafa;"></i> NHẬP HÀNG </a></h2>
     </div>
     <div id="divAll">
         
     <div id="div1">
         <H3 style="color: #0074d9;font-style: italic;font-weight: bold;">THÊM THÔNG TIN</H3>
+
+    <div class="input-container">
+        <label for="nhaCungCap">NHÀ CUNG CẤP</label>
+        <input placeholder="NHẬP NHÀ CUNG CẤp" type="text" id="nhaCungCap" name="nhaCungCap">
+        <button id="startRecord5"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
+        <button id="stopRecord5"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
+    </div>
+
+    <div class="input-container">
+        <label for="dienGiai">TÊN HÀNG HOÁ</label>
+        <input placeholder="NHẬP TÊN HÀNG" type="text" id="dienGiai" name="dienGiai">
+        <button id="startRecord4"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
+        <button id="stopRecord4"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
+    </div>
+
     <div class="input-container">
         <label for="soLuong">SỐ LƯỢNG</label>
         <input placeholder="NHẬP SỐ LƯỢNG" type="number" id="soLuong" name="soLuong">
+        <button id="startRecord"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
+        <button id="stopRecord"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
     </div>
-
 
     <div class="input-container">
         <label for="giaNhap">GIÁ NHẬP</label>
         <input placeholder="NHẬP GIÁ NHẬP" type="number" id="giaNhap" name="giaNhap">
+        <button id="startRecord1"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
+        <button id="stopRecord1"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
     </div>
 
     <div class="input-container">
         <label for="tiLe">Tỉ lệ %</label>
         <input placeholder="NHẬP TỈ LỆ GIÁ BÁN" type="number" id="tiLe" name="tiLe">
+        <button style="display: none;" id="startRecord2"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
+        <button style="display: none;" id="stopRecord2"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
     </div>
-
     <div class="input-container">
         <label for="donGia">ĐƠN GIÁ</label>
         <input placeholder="NHẬP ĐƠN GIÁ " type="number" id="donGia" name="donGia">
+        <button id="startRecord3"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
+        <button id="stopRecord3"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
     </div>
-
     
-
-    <div class="input-container">
-        <label for="dienGiai">TÊN HÀNG HOÁ</label>
-        <input placeholder="NHẬP TÊN HÀNG" type="text" id="dienGiai" name="dienGiai">
-    </div>
-
-    <div class="input-container">
-        <label for="nhaCungCap">NHÀ CUNG CẤP</label>
-        <input placeholder="NHẬP NHÀ CUNG CẤp" type="text" id="nhaCungCap" name="nhaCungCap">
-    </div>
-
     <div class="input-container">
         <label for="traTien">TRẢ TIỀN</label>
-        <input placeholder="NHẬP SỐ TIỀN TRẢ" type="number" id="traTien" name="traTien">
+        <input placeholder="NHẬP SỐ TIỀN TRẢ" type="text" id="traTien" name="traTien">
+        
     </div>
 
 
@@ -473,7 +596,7 @@ document.getElementById('exportExcelButton').addEventListener('click', function(
 
 document.getElementById('exportDataButton').addEventListener('click', function() {
     // Tạo mảng headers với các tên cột
-    const headers = ["Tên hàng hoá", "Nhà cung cấp", "Giá nhập", "Đơn giá"];
+    const headers = ["Mã hàng hoá", "Tên hàng hoá", "Giá nhập", "Giá bán"];
 
     // Tạo mảng dữ liệu từ bảng
     const data = [];
@@ -482,8 +605,8 @@ document.getElementById('exportDataButton').addEventListener('click', function()
     for (let i = 0; i < tableBody.rows.length; i++) {
         const row = tableBody.rows[i];
         const rowData = [
+            row.cells[10].textContent,  // Mã hàng hoá
             row.cells[4].textContent,  // Tên hàng hoá
-            row.cells[7].textContent,  // Nhà cung cấp
             row.cells[2].textContent,  // Giá nhập
             row.cells[3].textContent   // Đơn giá
         ];
@@ -535,6 +658,217 @@ function scrollToTop() {
     }, 10); // Thời gian giữa các bước cuộn (hoặc điều chỉnh tùy ý)
 }
 
+//ghi âm số lượng
+if ('webkitSpeechRecognition' in window) {
+    const recognition = new webkitSpeechRecognition();
+    const startButton = document.getElementById('startRecord');
+    const stopButton = document.getElementById('stopRecord');
+    const soLuongInput = document.getElementById('soLuong'); // Lấy thẻ input
+
+    // Thiết lập ngôn ngữ
+    recognition.lang = 'vi-VN';
+
+    // Sự kiện khi ghi âm hoàn thành
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        soLuongInput.value = transcript; // Cập nhật giá trị của input
+    };
+
+    // Sự kiện khi có lỗi
+    recognition.onerror = function(event) {
+        console.error('Lỗi ghi âm:', event.error);
+    };
+
+    startButton.addEventListener('click', function() {
+      
+            // Bắt đầu ghi âm khi bấm vào nút "Bắt đầu ghi âm"
+            recognition.start();
+        
+    });
+
+    stopButton.addEventListener('click', function() {
+        // Dừng ghi âm khi bấm vào nút "Dừng ghi âm"
+        recognition.stop();
+    });
+} else {
+    console.error('Trình duyệt không hỗ trợ Web Speech API.');
+}
+
+//ghi âm giá nhập
+if ('webkitSpeechRecognition' in window) {
+    const recognition = new webkitSpeechRecognition();
+    const startButton = document.getElementById('startRecord1');
+    const stopButton = document.getElementById('stopRecord1');
+    const giaNhapInput = document.getElementById('giaNhap'); // Lấy thẻ input
+
+    // Thiết lập ngôn ngữ
+    recognition.lang = 'vi-VN';
+
+    // Sự kiện khi ghi âm hoàn thành
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        giaNhapInput.value = transcript; // Cập nhật giá trị của input
+    };
+
+    // Sự kiện khi có lỗi
+    recognition.onerror = function(event) {
+        console.error('Lỗi ghi âm:', event.error);
+    };
+
+    startButton.addEventListener('click', function() {
+      
+            // Bắt đầu ghi âm khi bấm vào nút "Bắt đầu ghi âm"
+            recognition.start();
+        
+    });
+
+    stopButton.addEventListener('click', function() {
+        // Dừng ghi âm khi bấm vào nút "Dừng ghi âm"
+        recognition.stop();
+    });
+} else {
+    console.error('Trình duyệt không hỗ trợ Web Speech API.');
+}
+//ghi âm  tỉ lệ %
+if ('webkitSpeechRecognition' in window) {
+    const recognition = new webkitSpeechRecognition();
+    const startButton = document.getElementById('startRecord2');
+    const stopButton = document.getElementById('stopRecord2');
+    const tiLeInput = document.getElementById('tiLe'); // Lấy thẻ input
+
+    // Thiết lập ngôn ngữ
+    recognition.lang = 'vi-VN';
+
+    // Sự kiện khi ghi âm hoàn thành
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        tiLeInput.value = transcript; // Cập nhật giá trị của input
+    };
+
+    // Sự kiện khi có lỗi
+    recognition.onerror = function(event) {
+        console.error('Lỗi ghi âm:', event.error);
+    };
+
+    startButton.addEventListener('click', function() {
+      
+            // Bắt đầu ghi âm khi bấm vào nút "Bắt đầu ghi âm"
+            recognition.start();
+        
+    });
+
+    stopButton.addEventListener('click', function() {
+        // Dừng ghi âm khi bấm vào nút "Dừng ghi âm"
+        recognition.stop();
+    });
+} else {
+    console.error('Trình duyệt không hỗ trợ Web Speech API.');
+}
+//ghi âm đơn giá
+if ('webkitSpeechRecognition' in window) {
+    const recognition = new webkitSpeechRecognition();
+    const startButton = document.getElementById('startRecord3');
+    const stopButton = document.getElementById('stopRecord3');
+    const donGiaInput = document.getElementById('donGia'); // Lấy thẻ input
+
+    // Thiết lập ngôn ngữ
+    recognition.lang = 'vi-VN';
+
+    // Sự kiện khi ghi âm hoàn thành
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        donGiaInput.value = transcript; // Cập nhật giá trị của input
+    };
+
+    // Sự kiện khi có lỗi
+    recognition.onerror = function(event) {
+        console.error('Lỗi ghi âm:', event.error);
+    };
+
+    startButton.addEventListener('click', function() {
+      
+            // Bắt đầu ghi âm khi bấm vào nút "Bắt đầu ghi âm"
+            recognition.start();
+        
+    });
+
+    stopButton.addEventListener('click', function() {
+        // Dừng ghi âm khi bấm vào nút "Dừng ghi âm"
+        recognition.stop();
+    });
+} else {
+    console.error('Trình duyệt không hỗ trợ Web Speech API.');
+}
+//ghi âm Tên hàng hoá 
+if ('webkitSpeechRecognition' in window) {
+    const recognition = new webkitSpeechRecognition();
+    const startButton = document.getElementById('startRecord4');
+    const stopButton = document.getElementById('stopRecord4');
+    const dienGiaiInput = document.getElementById('dienGiai'); // Lấy thẻ input
+
+    // Thiết lập ngôn ngữ
+    recognition.lang = 'vi-VN';
+
+    // Sự kiện khi ghi âm hoàn thành
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        dienGiaiInput.value = transcript; // Cập nhật giá trị của input
+    };
+
+    // Sự kiện khi có lỗi
+    recognition.onerror = function(event) {
+        console.error('Lỗi ghi âm:', event.error);
+    };
+
+    startButton.addEventListener('click', function() {
+      
+            // Bắt đầu ghi âm khi bấm vào nút "Bắt đầu ghi âm"
+            recognition.start();
+        
+    });
+
+    stopButton.addEventListener('click', function() {
+        // Dừng ghi âm khi bấm vào nút "Dừng ghi âm"
+        recognition.stop();
+    });
+} else {
+    console.error('Trình duyệt không hỗ trợ Web Speech API.');
+}
+//ghi âm nhà cung cấp
+if ('webkitSpeechRecognition' in window) {
+    const recognition = new webkitSpeechRecognition();
+    const startButton = document.getElementById('startRecord5');
+    const stopButton = document.getElementById('stopRecord5');
+    const nhaCungCapInput = document.getElementById('nhaCungCap'); // Lấy thẻ input
+
+    // Thiết lập ngôn ngữ
+    recognition.lang = 'vi-VN';
+
+    // Sự kiện khi ghi âm hoàn thành
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        nhaCungCapInput.value = transcript; // Cập nhật giá trị của input
+    };
+
+    // Sự kiện khi có lỗi
+    recognition.onerror = function(event) {
+        console.error('Lỗi ghi âm:', event.error);
+    };
+
+    startButton.addEventListener('click', function() {
+      
+            // Bắt đầu ghi âm khi bấm vào nút "Bắt đầu ghi âm"
+            recognition.start();
+        
+    });
+
+    stopButton.addEventListener('click', function() {
+        // Dừng ghi âm khi bấm vào nút "Dừng ghi âm"
+        recognition.stop();
+    });
+} else {
+    console.error('Trình duyệt không hỗ trợ Web Speech API.');
+}
 </script>
 </body>
 </html>
