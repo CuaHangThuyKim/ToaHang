@@ -249,12 +249,27 @@
     <div id="div1">
         <H3 style="color: #0074d9;font-style: italic;font-weight: bold;">THÊM THÔNG TIN</H3>
 
-    <div class="input-container">
-        <label for="nhaCungCap">NHÀ CUNG CẤP</label>
-        <input placeholder="NHẬP NHÀ CUNG CẤp" type="text" id="nhaCungCap" name="nhaCungCap">
-        <button id="startRecord5"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
-        <button id="stopRecord5"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
-    </div>
+        <div class="input-container">
+            <label for="nhaCungCap">NHÀ CUNG CẤP</label>
+            <input placeholder="NHẬP NHÀ CUNG CẤp" type="text" id="nhaCungCap" name="nhaCungCap" list="nhaCungCapList">
+            <datalist id="nhaCungCapList">
+                <option value="HAI THƠ"></option>
+                <option value="HÙNG CUỘC"></option>
+                <option value="LINH NHƠN"></option>
+                <option value="O SHI"></option>
+                <option value="ĐÀO"></option>
+                <option value="HẠNH"></option>
+                <option value="LỊCH"></option>
+                <option value="HƯƠNG DŨNG"></option>
+                <option value="LAN HẠT"></option>
+                <option value="THUYỀN"></option>
+                <option value="PHƯƠNG"></option>
+                <option value="HOA"></option>
+            </datalist>
+            <button id="startRecord5"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
+            <button id="stopRecord5"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
+        </div>
+        
 
     <div class="input-container">
         <label for="dienGiai">TÊN HÀNG HOÁ</label>
@@ -303,7 +318,7 @@
 </div>
 
     <div id="div2">
-        <h1 style="margin-left: 35%;font-weight: bold;text-decoration: dotted ;color: red;">THÔNG TIN HÀNG NHẬP</h1>
+        <h1 style="margin-left: 35%;font-weight: bold;text-decoration: dotted ;color: red;">THÔNG TIN TOA HÀNG</h1>
     <table >
         <thead  >
             <tr >
