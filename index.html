@@ -234,15 +234,33 @@
         #stopRecord7:active{
             background-color: green;
         }
+
+        .success-message {
+    position: fixed;
+    top: 7%;
+    right: 50%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    animation: fadeInOut1 3s ease-in-out;
+    height: 30px;
+    font-size: 20px;
+}
+
+@keyframes fadeInOut1 {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
     </style>
-    <title>LÀM TOA HÀNG</title>
+    <title>NHẬP HÀNG</title>
 </head>
 <body>
     <div id="header">
-        <h2 style="margin-right: 5% ;color: aliceblue;"><a href="https://cuahangthuykim.github.io/TrangChu/"><i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i> TRANG CHỦ</a></h2>
-        <h2 ><a href="https://cuahangthuykim.github.io/HoaDonKhachHang/"><i class="fa-solid fa-receipt fa-xl" style="color: #ffffff;"></i> NHẬP HOÁ ĐƠN </a></h2>
-        <h2  style="margin-left:5%"  ><a href="https://cuahangthuykim.github.io/ToaHang/"><i class="fa-solid fa-layer-group fa-xl" style="color: #fafafa;"></i> NHẬP HÀNG </a></h2>
-        <h2  ><a href="URL-cua-lien-ket"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff;"></i> TRA CỨU MÃ HÀNG </a></h2>
+        <h2 style="margin-right: 5%; color: aliceblue;"><a href="URL-cua-lien-ket" target="_blank"><i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i> TRANG CHỦ</a></h2>
+        <h2><a href="https://cuahangthuykim.github.io/HoaDonKhachHang/" target="_blank"><i class="fa-solid fa-receipt fa-xl" style="color: #ffffff;"></i> NHẬP HOÁ ĐƠN </a></h2>
+        <h2 style="margin-left: 5%;"><a href="https://cuahangthuykim.github.io/ToaHang/" target="_blank"><i class="fa-solid fa-layer-group fa-xl" style="color: #fafafa;"></i> NHẬP HÀNG </a></h2>
+        <h2><a href="URL-cua-lien-ket" target="_blank"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff;"></i> TRA CỨU MÃ HÀNG </a></h2>        
     </div>
     <div id="divAll">
         
@@ -312,9 +330,11 @@
     </div>
 
 
-    <button id="addDataButton">THÊM HÀNG</button><br><br>
-    <button id="exportExcelButton">XUẤT TOA HÀNG</button><br><br>
-    <button id="exportDataButton">XUẤT FILE TRA CỨU</button><br><br>
+    <button id="addDataButton">THÊM HÀNG  <i class="fa-solid fa-square-plus fa-2xl" style="color: #ffffff;"></i></button><br><br>
+    <button id="exportExcelButton">XUẤT TOA HÀNG   <i class="fa-solid fa-file-excel fa-2xl" style="color: #ffffff;"></i> </button><br><br>
+    <button id="exportDataButton">XUẤT FILE TRA CỨU   <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #ffffff;"></i> </button><br><br>
+    <button id="resetTableButton">RESET BẢNG <i class="fa-solid fa-rotate fa-2xl" style="color: #ffffff;"></i> </button>
+
 </div>
 
     <div id="div2">
@@ -359,6 +379,9 @@
     <div id="buttonClick">
         <button id="scrollToTopButton"><i class="fa-solid fa-arrow-up fa-xl" style="color: #ffffff;"></i></button></br>
     <button id="scrollToBottomButton"><i class="fa-solid fa-arrow-up fa-rotate-180 fa-xl" style="color: #ffffff;"></i></button>
+    </div>
+    <div id="addSuccessMessage" class="success-message" style="display: none;">
+        Thêm hàng thành công!
     </div>
 </div>
 
@@ -409,7 +432,13 @@ tableBody.style.backgroundColor = "#ffffff";
     const editButton = document.createElement('button');
     editButton.textContent = 'Chỉnh sửa';
     editButtonCell.appendChild(editButton);
+    const addSuccessMessage = document.getElementById("addSuccessMessage");
+    addSuccessMessage.style.display = "block";
 
+    // Ẩn hộp thoại sau 3 giây (3000 miliseconds)
+    setTimeout(() => {
+        addSuccessMessage.style.display = "none";
+    }, 3000);
     const deleteButtonCell = newRow.insertCell(-1);
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Xóa';
@@ -427,6 +456,7 @@ tableBody.style.backgroundColor = "#ffffff";
         newRow.remove();
         updateSTT();
         updateTotal();
+        
     });
 
     // Thêm sự kiện cho nút "Xóa"
@@ -447,6 +477,7 @@ tableBody.style.backgroundColor = "#ffffff";
                 const maGiaBanCell = newRow.insertCell(9);
             maGiaBanCell.textContent = maGiaBan;
 
+            
             const maHang = createMaHang(nhaCungCap, dienGiai, donGia);
     const maHangCell = newRow.insertCell(10);
     maHangCell.textContent = maHang;
@@ -463,6 +494,7 @@ tableBody.style.backgroundColor = "#ffffff";
         const sttCell = row.cells[0];
         sttCell.textContent = i + 1;
     }
+    
 }
 
         function clearForm() {
@@ -885,6 +917,17 @@ if ('webkitSpeechRecognition' in window) {
 } else {
     console.error('Trình duyệt không hỗ trợ Web Speech API.');
 }
+document.getElementById('resetTableButton').addEventListener('click', function() {
+    clearTable(); // Gọi hàm clearTable() để xóa toàn bộ dòng trong bảng
+});
+function clearTable() {
+    const tableBody = document.getElementById('tableBody');
+    while (tableBody.firstChild) {
+        tableBody.removeChild(tableBody.firstChild);
+    }
+    updateTotal(); // Gọi hàm updateTotal() để cập nhật tổng sau khi xóa bảng
+}
+
 </script>
 </body>
 </html>
