@@ -28,7 +28,7 @@
             padding: 5px;
             border: 1px solid black;
             border-radius: 5px;
-            height: 20px;
+            height: 40px;
         }
 
         button {
@@ -122,14 +122,21 @@
            
         }
         #startRecord,#startRecord1,#startRecord2,#startRecord3,#startRecord4,#startRecord5,#startRecord6{
-            background-color: rgb(189, 203, 214);
+            background-color: rgb(8, 69, 116);
             border-radius: 50%;
             cursor: pointer;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding: 15px;
+            border-radius: 50%;
+
         }
         #stopRecord,#stopRecord1,#stopRecord2,#stopRecord3,#stopRecord4,#stopRecord6,#stopRecord5{
-            background-color: rgb(189, 203, 214);
+            background-color: rgb(228, 228, 20);
             border-radius: 10px;
             cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
         }
         #startRecord:hover{
             opacity: 0.6;
@@ -252,6 +259,11 @@
     0%, 100% { opacity: 0; }
     10%, 90% { opacity: 1; }
 }
+.xoabtn{
+    border-radius: 50%;
+    padding: 15px;
+    background-color: red;
+}
     </style>
     <title>NHẬP HÀNG</title>
 </head>
@@ -284,56 +296,63 @@
                 <option value="PHƯƠNG"></option>
                 <option value="HOA"></option>
             </datalist>
-            <button id="startRecord5"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
-            <button id="stopRecord5"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
+            <button id="startRecord5"><i class="fa-solid fa-microphone fa-2xl" style="color: #ffffff;"></i></button>
+            <button id="stopRecord5"><i class="fa-solid fa-stop fa-2xl" style="color: rgb(75, 55, 55);"></i></button>
+            <button id="xoa1" class="xoabtn" onclick="xoanhaCungCap()"><i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i></button>
         </div>
         
 
     <div class="input-container">
         <label for="dienGiai">TÊN HÀNG HOÁ</label>
         <input placeholder="NHẬP TÊN HÀNG" type="text" id="dienGiai" name="dienGiai">
-        <button id="startRecord4"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
-        <button id="stopRecord4"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
+        <button id="startRecord4"><i class="fa-solid fa-microphone fa-2xl" style="color:#ffffff;"></i></button>
+        <button id="stopRecord4"><i class="fa-solid fa-stop fa-2xl " style="color:  rgb(75, 55, 55);"></i></button>
+        <button id="xoa2" class="xoabtn" onclick="xoatenHangHoa()"><i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i></button>
     </div>
 
     <div class="input-container">
         <label for="soLuong">SỐ LƯỢNG</label>
         <input placeholder="NHẬP SỐ LƯỢNG" type="number" id="soLuong" name="soLuong">
-        <button id="startRecord"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
-        <button id="stopRecord"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
+        <button id="startRecord"><i class="fa-solid fa-microphone fa-2xl" style="color:#ffffff;"></i></button>
+        <button id="stopRecord"><i class="fa-solid fa-stop fa-2xl" style="color:  rgb(75, 55, 55);"></i></button>
+        <button id="xoa3" class="xoabtn" onclick="xoasoLuong()"><i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i></button>
     </div>
 
     <div class="input-container">
         <label for="giaNhap">GIÁ NHẬP</label>
         <input placeholder="NHẬP GIÁ NHẬP" type="number" id="giaNhap" name="giaNhap">
-        <button id="startRecord1"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
-        <button id="stopRecord1"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
+        <button id="startRecord1"><i class="fa-solid fa-microphone fa-2xl" style="color:#ffffff;"></i></button>
+        <button id="stopRecord1"><i class="fa-solid fa-stop fa-2xl" style="color:  rgb(75, 55, 55);"></i></button>
+        <button id="xoa4" class="xoabtn" onclick="xoagiaNhap()"><i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i></button>
     </div>
 
     <div class="input-container">
         <label for="tiLe">Tỉ lệ %</label>
         <input placeholder="NHẬP TỈ LỆ GIÁ BÁN" type="number" id="tiLe" name="tiLe">
-        <button style="display: none;" id="startRecord2"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
-        <button style="display: none;" id="stopRecord2"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
+        <button style="display: none;" id="startRecord2"><i class="fa-solid fa-microphone fa-2xl" style="color:#ffffff;"></i></button>
+        <button style="display: none;" id="stopRecord2"><i class="fa-solid fa-stop fa-2xl" style="color:  rgb(75, 55, 55);"></i></button>
+        <button id="xoa5" class="xoabtn" onclick="xoatiLe()"><i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i></button>
     </div>
     <div class="input-container">
         <label for="donGia">ĐƠN GIÁ</label>
         <input placeholder="NHẬP ĐƠN GIÁ " type="number" id="donGia" name="donGia">
-        <button id="startRecord3"><i class="fa-solid fa-microphone" style="color: #6f7785;"></i></button>
-        <button id="stopRecord3"><i class="fa-solid fa-stop" style="color: #848c9a;"></i></button>
+        <button id="startRecord3"><i class="fa-solid fa-microphone fa-2xl" style="color:#ffffff;"></i></button>
+        <button id="stopRecord3"><i class="fa-solid fa-stop fa-2xl " style="color:  rgb(75, 55, 55);"></i></button>
+        <button id="xoa6" class="xoabtn" onclick="xoadonGia()"><i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i></button>
     </div>
     
     <div class="input-container">
         <label for="traTien">TRẢ TIỀN</label>
         <input placeholder="NHẬP SỐ TIỀN TRẢ" type="text" id="traTien" name="traTien">
-        
+        <button id="xoa7" class="xoabtn" onclick="xoatraTien()"><i class="fa-solid fa-trash fa-2xl" style="color: #ffffff;"></i></button>
+        <button id="xoa8" class="xoabtn" onclick="xoatatCa()" style="color: rgb(255, 255, 255); background-color: rgb(172, 0, 0); padding: 15px;border-radius: 20%; font-weight: bold;">XOÁ TẤT CẢ</button>
     </div>
 
 
-    <button id="addDataButton">THÊM HÀNG  <i class="fa-solid fa-square-plus fa-2xl" style="color: #ffffff;"></i></button><br><br>
-    <button id="exportExcelButton">XUẤT TOA HÀNG   <i class="fa-solid fa-file-excel fa-2xl" style="color: #ffffff;"></i> </button><br><br>
-    <button id="exportDataButton">XUẤT FILE TRA CỨU   <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #ffffff;"></i> </button><br><br>
-    <button id="resetTableButton">TẠO TOA MỚI <i class="fa-solid fa-rotate fa-2xl" style="color: #ffffff;"></i> </button>
+    <button style="padding: 20px; border-radius: 15px;" id="addDataButton">THÊM HÀNG  <i class="fa-solid fa-square-plus fa-2xl" style="color: #ffffff;"></i></button><br><br>
+    <button style="padding: 20px; border-radius: 15px;"id="exportExcelButton">XUẤT TOA HÀNG   <i class="fa-solid fa-file-excel fa-2xl" style="color: #ffffff;"></i> </button><br><br>
+    <button style="padding: 20px; border-radius: 15px;"id="exportDataButton">XUẤT FILE TRA CỨU   <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #ffffff;"></i> </button><br><br>
+    <button style="padding: 20px; border-radius: 15px;"id="resetTableButton">RESET BẢNG <i class="fa-solid fa-rotate fa-2xl" style="color: #ffffff;"></i> </button>
 
 </div>
 
@@ -377,8 +396,8 @@
     </table>
 </div>
     <div id="buttonClick">
-        <button id="scrollToTopButton"><i class="fa-solid fa-arrow-up fa-xl" style="color: #ffffff;"></i></button></br>
-    <button id="scrollToBottomButton"><i class="fa-solid fa-arrow-up fa-rotate-180 fa-xl" style="color: #ffffff;"></i></button>
+        <button id="scrollToTopButton"><i class="fa-solid fa-arrow-up fa-2xl" style="color: #ffffff;"></i></button></br>
+    <button id="scrollToBottomButton"><i class="fa-solid fa-arrow-up fa-rotate-180 fa-2xl" style="color: #ffffff;"></i></button>
     </div>
     <div id="addSuccessMessage" class="success-message" style="display: none;">
         Thêm hàng thành công!
@@ -927,7 +946,36 @@ function clearTable() {
     }
     updateTotal(); // Gọi hàm updateTotal() để cập nhật tổng sau khi xóa bảng
 }
-
+    function xoanhaCungCap(){
+        document.getElementById('nhaCungCap').value='';
+    }
+    function xoatenHangHoa(){
+        document.getElementById('dienGiai').value='';
+    }
+    function xoasoLuong(){
+        document.getElementById('soLuong').value='';
+    }
+    function xoagiaNhap(){
+        document.getElementById('giaNhap').value='';
+    }
+    function xoatiLe(){
+        document.getElementById('tiLe').value='';
+    }
+    function xoadonGia(){
+        document.getElementById('donGia').value='';
+    }
+    function xoatraTien(){
+        document.getElementById('traTien').value='';
+    }
+    function xoatatCa(){
+        document.getElementById('nhaCungCap').value='';
+        document.getElementById('dienGiai').value='';
+        document.getElementById('soLuong').value='';
+        document.getElementById('giaNhap').value='';
+        document.getElementById('tiLe').value='';
+        document.getElementById('donGia').value='';
+        document.getElementById('traTien').value='';
+    }
 </script>
 </body>
 </html>
